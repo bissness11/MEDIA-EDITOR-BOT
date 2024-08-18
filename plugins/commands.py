@@ -32,7 +32,7 @@ async def start(client, message):
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="HELPER", url="t.me/DarkPhew")]]),
         # Choose either markdown or HTML formatting
-        parse_mode="HTML"
+        parse_mode="markdown"
     )
 
 @Client.on_message(filters.command('help') & filters.private)
@@ -42,5 +42,5 @@ async def help(client, message):
         text=HELP_MSG,
         disable_web_page_preview=True,
         # Choose either markdown or HTML formatting
-        parse_mode="HTML"
+        parse_mode="markdown"
     )
