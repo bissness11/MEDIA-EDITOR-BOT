@@ -31,14 +31,16 @@ async def start(client, message):
         text=START_MSG.format(message.from_user.mention),
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="HELPER", url="t.me/DarkPhew")]]),
-        parse_mode="combined"
+        # Choose either markdown or HTML formatting
+        parse_mode="HTML"
     )
-
 
 @Client.on_message(filters.command('help') & filters.private)
 async def help(client, message):
     # Use chat.id instead of message.message_id
     await message.reply_text(
         text=HELP_MSG,
-        disable_web_page_preview=True
+        disable_web_page_preview=True,
+        # Choose either markdown or HTML formatting
+        parse_mode="HTML"
     )
